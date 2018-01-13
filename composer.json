@@ -1,6 +1,6 @@
 {
-    "name": "uxie/router",
-    "description": "Uxie Framework Statistics Recorder",
+    "name": "uxie/statistics",
+    "description": "Uxie Framework Visits Recorder",
     "license": "MIT",
 
     "require": {
