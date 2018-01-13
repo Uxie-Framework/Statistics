@@ -21,17 +21,17 @@ class VisitorData implements VisitorDataInterface
         $this->date = date('y/m/d H:i:s');
     }
 
-    private function setCurrentUrl()
+    private function setCurrentUrl(): string
     {
         return "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     }
 
-    private function setPreviousUrl()
+    private function setPreviousUrl(): string
     {
         return (isset($_SERVER['HTTP_REFERER'])) ? $_SERVER['HTTP_REFERER'] : '';
     }
 
-    private function setIp()
+    private function setIp(): string
     {
         if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
             return $_SERVER['HTTP_CLIENT_IP'];
@@ -42,7 +42,7 @@ class VisitorData implements VisitorDataInterface
         }
     }
 
-    private function setSystemDetails()
+    private function setSystemDetails(): string
     {
         $data = explode(' ', $_SERVER['HTTP_USER_AGENT']);
         $this->browser = $data[0];

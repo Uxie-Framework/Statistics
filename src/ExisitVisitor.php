@@ -2,13 +2,15 @@
 namespace Statistics;
 
 use Model\Model;
+use Model\StatisticsHits;
+use Model\StatisticsUniq;
 
 class ExisitVisitor implements VisitorInterface
 {
     public function save(VisitorDataInterface $data): void
     {
         $this->saveHit($data);
-        $this->updateUniqueVisitor($data);
+        $this->updateUniqueVisitor();
     }
 
     private function saveHit(VisitorDataInterface $data): void
@@ -25,8 +27,8 @@ class ExisitVisitor implements VisitorInterface
         ->save();
     }
 
-    private function updateUniqueVisitor(VisitorDataInterface $data): void
+    private function updateUniqueVisitor(): void
     {
-        //
+        Model\StatisticsUniq::increase('hits', '+1')->where('id', '=', $_COOKIE['visitor'])->save();
     }
 }

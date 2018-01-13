@@ -11,6 +11,7 @@ class NewVisitor implements VisitorInterface
     {
         $this->saveHit($data);
         $this->saveUniqueVisitor($data);
+        $this->setCookie($date);
     }
 
     private function saveHit(VisitorDataInterface $data): void
@@ -29,11 +30,11 @@ class NewVisitor implements VisitorInterface
 
     private function saveUniqueVisitor(VisitorDataInterface $data): void
     {
-        //
+        StatisticsUniq::insert(['id', 'hits'], [$data->getId(), 1])->save();
     }
 
-    private function setCookie()
+    private function setCookie(VisitorDataInterface $data): void
     {
-        //
+        $_COOKIE['visitor'] = $data->getId();
     }
 }
