@@ -42,7 +42,7 @@ class VisitorData implements VisitorDataInterface
         }
     }
 
-    private function setSystemDetails(): string
+    private function setSystemDetails(): void
     {
         $data = explode(' ', $_SERVER['HTTP_USER_AGENT']);
         $this->browser = $data[0];

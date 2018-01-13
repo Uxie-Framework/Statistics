@@ -22,7 +22,3 @@ class Visit
         $visitor->save(new VisitorData());
     }
 }
-
-require '../vendor/autoload.php';
-
-new Visit();

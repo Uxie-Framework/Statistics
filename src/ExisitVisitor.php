@@ -29,6 +29,6 @@ class ExisitVisitor implements VisitorInterface
 
     private function updateUniqueVisitor(): void
     {
-        Model\StatisticsUniq::increase('hits', '+1')->where('id', '=', $_COOKIE['visitor'])->save();
+        StatisticsUniq::increase('hits', '+1')->where('id', '=', $_COOKIE['visitor'])->save();
     }
 }

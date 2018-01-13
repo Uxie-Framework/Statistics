@@ -9,9 +9,9 @@ class NewVisitor implements VisitorInterface
 {
     public function save(VisitorDataInterface $data): void
     {
+        $this->setCookie($data);
         $this->saveHit($data);
         $this->saveUniqueVisitor($data);
-        $this->setCookie($date);
     }
 
     private function saveHit(VisitorDataInterface $data): void
@@ -35,6 +35,6 @@ class NewVisitor implements VisitorInterface
 
     private function setCookie(VisitorDataInterface $data): void
     {
-        $_COOKIE['visitor'] = $data->getId();
+        setcookie('visitor', $data->getId(), time()+3600*30*12);
     }
 }

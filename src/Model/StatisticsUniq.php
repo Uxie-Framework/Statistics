@@ -1,6 +1,6 @@
 <?php
 
-namespace Statistics\Model;
+namespace Model;
 
 use Model\Model;
 
