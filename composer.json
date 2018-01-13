@@ -1,0 +1,28 @@
+{
+    "name": "uxie/router",
+    "description": "Uxie Framework Statistics Recorder",
+    "license": "MIT",
+
+    "require": {
+        "php": ">=7.0",
+        "uxie/model": "^0.1"
+    },
+
+    "authors": [
+        {
+            "name": "Mohamed Amine",
+            "email": "MohamedAmine1c@gmail.com",
+            "homepage": "https://github.com/MohamedAmine1c",
+            "role": "owner"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+
+    "autoload": {
+    "psr-4": {
+      "Statistics\\":"src/",
+      "Model\\":"src/Model/"
+    }
+  }
+}
