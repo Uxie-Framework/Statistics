@@ -83,4 +83,9 @@ class VisitorData implements VisitorDataInterface
     {
         return $this->date;
     }
+
+    public function getMemoryUsage()
+    {
+        return memory_get_peak_usage(false)/1024;
+    }
 }

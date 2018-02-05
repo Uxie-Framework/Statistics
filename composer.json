@@ -5,7 +5,7 @@
 
     "require": {
         "php": ">=7.0",
-        "uxie/model": "^0.1"
+        "uxie/model": "=>0.1"
     },
 
     "authors": [
