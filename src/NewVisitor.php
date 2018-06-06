@@ -14,11 +14,14 @@ class NewVisitor extends Visitor implements VisitorInterface
 
     private function saveUniqueVisitor(VisitorDataInterface $data): void
     {
-        StatisticsUniq::insert(['id', 'hits'], [$data->getId(), 1])->save();
+        StatisticsUniq::insert([
+          'id'   => $data->getId(),
+          'hits' => 1,
+        ])->save();
     }
 
     private function setCookie(VisitorDataInterface $data): void
     {
-        setcookie('visitor', $data->getId(), time()+3600*30*12);
+        cookie('visitor', $data->getId(), time()+3600*30*12);
     }
 }

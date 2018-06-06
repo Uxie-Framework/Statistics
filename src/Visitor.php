@@ -6,18 +6,16 @@ use Model\StatisticsHits;
 
 abstract class Visitor
 {
-    protected function saveHit(VisitorDataInterface $data): void
-    {
-        StatisticsHits::insert(['id', 'ip', 'browser', 'Os', 'previousurl', 'currenturl', 'date', 'memory'], [
-            $data->getId(),
-            $data->getIp(),
-            $data->getBrowser(),
-            $data->getOs(),
-            $data->getPreviousUrl(),
-            $data->getCurrentUrl(),
-            $data->getDate(),
-            $data->getMemoryUsage(),
-        ])
-        ->save();
+    protected function saveHit(VisitorDataInterface $data): void{
+      StatisticsHits::insert([
+          'id'          => $data->getId(),
+          'ip'          => $data->getIp(),
+          'browser'     => $data->getBrowser(),
+          'Os'          => $data->getOs(),
+          'previousurl' => $data->getPreviousUrl(),
+          'currenturl'  => $data->getCurrentUrl(),
+          'date'        => $data->getDate(),
+          'memory'      => $data->getMemoryUsage(),
+        ])->save();
     }
 }
