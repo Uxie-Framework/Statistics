@@ -1,2 +1,2 @@
 # Statistics
-Record Visitors info
+Record Visitors info for Uxie Framework
